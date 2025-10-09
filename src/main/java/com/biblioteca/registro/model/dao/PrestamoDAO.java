@@ -13,7 +13,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
-import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -92,12 +91,12 @@ public class PrestamoDAO {
                 }
             }
             
-            conn.commit(); // ✅ Commit final: todo fue bien
+            conn.commit(); // Commit final: todo fue bien
             exito = true;
             logger.info("Préstamo registrado exitosamente. ID de Préstamo: {}", prestamo.getPrestamoId());
 
         } catch (SQLException e) {
-            // 🚨 Rollback: algo falló (posiblemente por stock insuficiente, chequeado por el trigger)
+            // Rollback: algo falló (posiblemente por stock insuficiente, chequeado por el trigger)
             if (conn != null) {
                 try {
                     conn.rollback();
@@ -137,9 +136,6 @@ public class PrestamoDAO {
         try (Connection conn = DBConnection.getInstance().getConnection();
              PreparedStatement ps = conn.prepareStatement(UPDATE_DEVOLUCION_SQL)) {
             
-            // Nota: El estado aquí es un marcador temporal. El trigger de la BD 
-            // recalcula el estado final ('Devuelto' o 'Retrasado') basándose en las fechas.
-            // Para simplicidad en la lógica de aplicación, solo marcamos la fecha de devolución.
             
             ps.setTimestamp(1, fechaActual);
             ps.setString(2, "Devuelto"); // Marcador, el trigger lo afinará.

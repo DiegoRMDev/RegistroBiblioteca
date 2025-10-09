@@ -44,7 +44,7 @@ public class Categoria {
         this.descripcion = descripcion;
     }
 
-     // Opcional: toString para depuración
+     
     @Override
     public String toString() {
         return nombre; // Útil si quieres que un ComboBox muestre el nombre directamente

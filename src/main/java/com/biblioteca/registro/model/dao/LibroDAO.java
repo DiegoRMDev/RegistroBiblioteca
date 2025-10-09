@@ -88,12 +88,12 @@ public class LibroDAO {
                 }
             }
             
-            conn.commit(); // ✅ Commit final: todo fue bien
+            conn.commit(); // Commit final: todo fue bien
             exito = true;
             logger.info("Libro y Autores asociados insertados exitosamente. ID de Libro: {}", libro.getLibroId());
 
         } catch (SQLException e) {
-            // 🚨 Rollback: algo falló, deshacer todo
+            // Rollback: algo falló, deshacer todo
             if (conn != null) {
                 try {
                     conn.rollback();
@@ -111,11 +111,7 @@ public class LibroDAO {
                 } catch (SQLException e) {
                     logger.error("Error al restaurar autoCommit: {}", e.getMessage());
                 }
-                // Nota: La conexión se cerrará automáticamente si se usa try-with-resources
-                // con el DAO, pero aquí la manejamos manualmente porque establecimos setAutoCommit(false).
-                // Sin embargo, si DBConnection.getInstance().getConnection() devuelve una conexión nueva,
-                // no necesitamos cerrarla manualmente si el DAO no la crea.
-                // Asumiendo que DBConnection usa Singleton (como lo implementamos), no la cerramos aquí.
+                
             }
         }
         return exito;
@@ -125,8 +121,8 @@ public class LibroDAO {
     private final String FIND_ALL_LIBROS_SQL = "SELECT "
             + "l.LibroID, l.ISBN, l.Titulo, l.Editorial, l.AnioPublicacion, "
             + "l.Idioma, l.UbicacionFisica, l.RutaImagen, l.Estado, l.Stock, "
-            + "c.CategoriaID, c.Nombre AS NombreCat, c.Descripcion AS DescripcionCat, " // Usamos alias para evitar conflictos
-            + "a.AutorID, a.Nombre AS NombreAut, a.Apellido AS ApellidoAut, la.OrdenAutor " // Usamos alias para evitar conflictos
+            + "c.CategoriaID, c.Nombre AS NombreCat, c.Descripcion AS DescripcionCat, " 
+            + "a.AutorID, a.Nombre AS NombreAut, a.Apellido AS ApellidoAut, la.OrdenAutor " 
             + "FROM dbo.Libros l "
             + "INNER JOIN dbo.Categorias c ON l.CategoriaID = c.CategoriaID "
             + "LEFT JOIN dbo.LibroAutores la ON l.LibroID = la.LibroID "
