@@ -18,7 +18,7 @@ public class FrmLogin extends javax.swing.JFrame {
         
         this.setLocationRelativeTo(this);
         ImagenLabel.pintarImagen(lblImagen1, "src/main/img/design/FondoLogin.jpg");
-        ImagenLabel.pintarImagen(lblImagen2, "src/main/img/design/Icon_login.jpg");
+        ImagenLabel.pintarImagen(lblImagen2, "src/main/img/design/FondoUsuario.png");
         
         
         
@@ -46,8 +46,8 @@ public class FrmLogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("LOGIN");
-        setPreferredSize(new java.awt.Dimension(1040, 640));
+        setTitle("SISTEMA BIBLIOTECARIO");
+        setPreferredSize(new java.awt.Dimension(1030, 640));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -68,7 +68,7 @@ public class FrmLogin extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(lblImagen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 19, 178, 130));
+        jPanel2.add(lblImagen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 178, 150));
 
         jTextField1.setBackground(new java.awt.Color(249, 249, 250));
         jTextField1.setForeground(new java.awt.Color(102, 102, 102));
@@ -80,7 +80,7 @@ public class FrmLogin extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 280, 50));
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 280, 50));
 
         jButton1.setBackground(new java.awt.Color(26, 85, 189));
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
@@ -91,7 +91,7 @@ public class FrmLogin extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 210, 50));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 510, 210, 50));
 
         jTextField2.setBackground(new java.awt.Color(249, 249, 250));
         jTextField2.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
@@ -104,19 +104,21 @@ public class FrmLogin extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 280, 50));
+        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 280, 50));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setText("CONTRASEÑA");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 90, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DIEGO\\Documents\\NetBeansProjects\\RegistroBiblioteca\\src\\main\\img\\design\\IconPassword.png")); // NOI18N
+        jLabel1.setText("CONTRASEÑA:");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 110, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setText("USUARIO");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 70, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\DIEGO\\Documents\\NetBeansProjects\\RegistroBiblioteca\\src\\main\\img\\design\\IconUser.png")); // NOI18N
+        jLabel2.setText("USUARIO:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 80, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel3.setText("BIENVENIDO AL SISTEMA");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, 20));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, 20));
 
         background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 420, 640));
 
