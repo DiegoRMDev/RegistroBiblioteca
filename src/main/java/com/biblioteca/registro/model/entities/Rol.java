@@ -37,7 +37,7 @@ public class Rol {
         this.nombreRol = nombreRol;
     }
     
-    // Opcional: toString para facilitar la depuración
+    
     @Override
     public String toString() {
         return "Rol{" +

@@ -54,7 +54,7 @@ public class Autor {
         this.nacionalidad = nacionalidad;
     }
     
-    // Opcional: toString para mostrar el nombre completo fácilmente
+  
     @Override
     public String toString() {
         return nombre + " " + apellido;

@@ -9,9 +9,10 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+//Clase para agregar imagenes desde un Label
 public class ImagenLabel {
     public static void pintarImagen(JLabel lbl, String ruta) {
-        // Usamos variables locales, ya no las de instancia (imagen, icono)
+        
         ImageIcon imagen = new ImageIcon(ruta); 
         
         Icon icono = new ImageIcon(
@@ -23,8 +24,7 @@ public class ImagenLabel {
         );
         
         lbl.setIcon(icono);
-        // Nota: No se llama a this.repaint() aquí porque no estamos en el Frame/Componente.
-        // La actualización de la GUI ocurre cuando el Frame se hace visible o repinta.
+        
     }
 }
 
